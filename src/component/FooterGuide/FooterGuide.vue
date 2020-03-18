@@ -32,7 +32,20 @@
       name:'FooterGuide',
       methods:{
           Goto(path){
-            this.$router.replace(path)
+
+            // //如果点击当前项，没有反应
+            // if(path !==this.$route.path){
+            //   //编程式路由跳转
+            //   this.$router.replace(path)
+            // }
+            //如果点击当前项，没有反应
+            if(path !==this.$route.path){
+              //编程式路由跳转
+              this.$router.replace(path)
+            }else{//刷新当前页面
+              window.location =path
+            }
+             
           }
       }
   }
@@ -48,6 +61,7 @@
     bottom 0
     height 50px
     width 100%
+    background-color white
     .guide-item
       display flex
       flex-direction column
