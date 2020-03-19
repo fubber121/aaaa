@@ -11,7 +11,9 @@
   export default {
 
    async mounted(){
+     //通知action异步获取并保存到state
      this.$store.dispatch('getAddress')
+     this.$store.dispatch('autoLogin')
         
     },
     components:{
