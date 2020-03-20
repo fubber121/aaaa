@@ -39,7 +39,7 @@
       </div>
       <div class="shop_container">
         <ul class="shop_list" v-if="shops.length>0">
-          <li class="shop_li border-1px" v-for="shop in shops" :key="shop.id">
+          <li class="shop_li border-1px" v-for="shop in shops" :key="shop.id" @click="$router.push('/shop')">
             <a>
               <div class="shop_left">
                 <img class="shop_img" :src="'https://fuss10.elemecdn.com'+shop.image_path">
@@ -108,7 +108,18 @@
   
   export default {
     computed:{
-     ...mapState(['address','categorys' ,'shops']),
+     ...mapState({
+    //  'address',
+    //  'categorys' ,
+    //  'shops'
+        address:state => state.msite.address, // state是总状态, 函数的返回就是计算属性值
+        categorys:state => state.msite.categorys, 
+        shops:state => state.msite.shops, 
+     }),
+
+
+
+
      //包含所有分类的二维数据
      categorysArr(){
          const { categorys } = this

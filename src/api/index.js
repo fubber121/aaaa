@@ -37,4 +37,11 @@ export const reqSendCode = (phone) => ajax.get('/sendcode', {
   
   // 7. 自动登陆
   export const reqAutoLogin = () => ajax.get('/auto_login')
-  
+
+//获取goods
+ export const reqGoods =()=>ajax('/goods')
+//获取ratings
+ export const reqRatings =()=>ajax('/ratings')
+
+//获取info
+ export const reqInfo =()=>ajax('/info')
